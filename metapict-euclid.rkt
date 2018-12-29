@@ -1,6 +1,10 @@
 #lang racket
 
-(require metapict)
+(require metapict
+         (only-in math/number-theory quadratic-solutions))
+(provide (all-defined-out))
+
+(set-curve-pict-size 500 500)
 
 ;;; CUSTOM LABELING
 
@@ -14,9 +18,9 @@
 
 ;;; SEGMENT AND ANGLE DECORATORS
 
-; mark-angle : pt pt pt int number number -> pict
-; mark the directed angle AOB with n arcs that are sep units apart
-; The initial arc has radius r.
+;; mark-angle : pt pt pt int number number -> pict
+;; mark the directed angle AOB with n arcs that are sep units apart
+;; The initial arc has radius r.
 (define (mark-angle A O B [n 1] [r 1] [sep 0.5])
   (define α (angle (pt- A O)))
   (define β (angle (pt- B O)))
@@ -76,3 +80,72 @@
   (for/draw ([p points])
     (arrow-at p sep-vec #:size size)))
 
+;;; INTERSECTIONS
+
+;;slope of line through two points. Returns false if vertical line.
+(define (slope A B)
+  (define-values (Ax Ay Bx By)
+    (values (pt-x A) (pt-y A)
+            (pt-x B) (pt-y B)))
+  (if (= Ax Bx)
+      #f
+      (/ (- By Ay) (- Bx Ax))))
+
+
+;;find the intersection point between lines AB and CD
+(define (intersect-ll A B C D)
+  (match-define (pt Ax Ay) A)
+  (match-define (pt Bx By) B)
+  (match-define (pt Cx Cy) C)
+  (match-define (pt Dx Dy) D)
+  (define m (slope A B))
+  (define n (slope C D))
+  (cond
+    [(and (not m) (not n)) #f] ;parallel: both lines are vertical
+    [(equal? n m) #f] ;slopes are equal, lines are parallel.
+    [(not m) (pt Ax (+ (* n (- Ax Cx)) Cy))] ;AB is vertical. Ax is the x coord.
+    [(not n) (pt Cx (+ (* m (- Cx Ax)) Ay))] ;CD is vertical. Cx is the x cord.
+    [(zero? m) (pt (+ Cx (/ (- Ay Cy) n)) Ay)]  ;AB is horizontal. Ay is the y coord.
+    [(zero? n) (pt (+ Ax (/ (- Cy Ay) m)) Cy)] ;CD is horizontal. Cy is the y coord.
+    [else (let* ([x (/ (+ (* m Ax) (- (* n Cx)) Cy (- Ay)) (- m n))] ;General case
+                 [y (+ (* m x) (- (* m Ax)) Ay)])
+            (pt x y))]))
+
+;;find the intersection of a line AB and circle with center C radius r
+;;return a list of intersections
+(define (intersect-lc A B C r)
+  (match-define (pt Ax Ay) A)
+  (match-define (pt Bx By) B)
+  (match-define (pt Cx Cy) C)
+  (define aX (- Ax Cx)) ;translate so that C is at the origin.
+  (define aY (- Ay Cy))
+  (define m (slope A B))
+  (define xs (quadratic-solutions
+              (+ 1 (expt m 2))
+              (- (* 2 m aY) (* 2 (expt m 2) aX))
+              (- (expt (- (* m aX) aY) 2) (expt r 2))))
+  (define ys (map (lambda (x) (+ (* m (- x aX)) aY)) xs))
+  (define XS (map (lambda (x) (+ x Cx)) xs)) ;translate back to original coords.
+  (define YS (map (lambda (y) (+ y Cy)) ys))
+  (map pt XS YS))
+
+(define (intersect-cl C r A B)
+  (intersect-lc A B C r))
+
+;; return list of intersections of two circles
+;; pt real pt real -> listof pt
+(define (intersect-cc A r1 B r2)
+  (define d (dist A B))
+  ;; using law of cosines:
+  (define α (acos (/ (+ (- (expt r2 2)) (expt r1 2) (expt d 2)) (* 2 r1 d))))
+  (define-values (AB θ)
+    (@ (pt- B A)))
+  (cond
+    [(> d (+ r1 r2)) empty]
+    [(or (= d (+ r1 r2)) ;externally tangent
+         (= (+ r1 d) r2) ;internally tangent
+         (= (+ r2 d) r1)) ;internally tangent
+     (list (med (/ r1 (+ r1 r2)) A B))]
+    [else (list
+           (pt+ A (pt@ r1 (+ θ α)))
+           (pt+ A (pt@ r1 (- θ α))))]))
