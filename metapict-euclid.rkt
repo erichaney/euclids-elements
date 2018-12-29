@@ -141,7 +141,7 @@
   (define-values (AB θ)
     (@ (pt- B A)))
   (cond
-    [(and (= A B) (= r1 r2)) (error "Circles may not be identical.")]
+    [(and (equal? A B) (equal? r1 r2)) (error "Circles may not be identical.")]
     [(> d (+ r1 r2)) empty]
     [(or (= d (+ r1 r2)) ;externally tangent
          (= (+ r1 d) r2) ;internally tangent
