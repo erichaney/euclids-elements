@@ -10,21 +10,24 @@
 (define D (pt+ A (vec@ (dist A B) pi)))
 (define E (pt+ B (vec@ (dist A B) 0)))
 
-
-(define prop1-1-diag
+(define prop1-1-diagram
   (draw
+   ; given
    (curve A -- B)
-   (circle A B)
-   (circle B A)
-   (curve A -- C)
-   (curve B -- C)
    (point-label "A" A (lft))
    (point-label "B" B (rt))
+   ; 1
+   (circle A B)
    (point-label "C" C (top))
    (point-label "D" D (lft))
-   (point-label "E" E (rt))))
+   ; 2
+   (circle B A)
+   (point-label "E" E (rt))
+   ; 3
+   (curve A -- C)
+   (curve B -- C)))
 
-(penwidth 2 prop1-1-diag)
-;(send (pict->bitmap prop1-1-diag) save-file "prop1-1-diag.png" 'png)
+(penwidth 2 prop1-1-diagram)
+;(send (pict->bitmap prop1-1-diagram) save-file "prop1-1-diagram.png" 'png)
 
 
