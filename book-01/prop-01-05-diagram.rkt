@@ -12,7 +12,7 @@
 (define G (med 0.6 C E))
 
 
-(define prop1-5-diagram
+(define prop-01-05-diagram
   (draw
    ;given
    (curve A -- B -- C -- cycle)
@@ -33,5 +33,5 @@
    (curve F -- C)))
 
 
-(penwidth 2 prop1-5-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-5-diagram)) save-file "prop-01-05-diagram.png" 'png)
+(penwidth 2 prop-01-05-diagram)
+;(send (pict->bitmap (penwidth 2 prop-01-05-diagram)) save-file "prop-01-05-diagram.png" 'png)

@@ -10,7 +10,7 @@
 (define D (pt+ A (vec@ (dist A B) pi)))
 (define E (pt+ B (vec@ (dist A B) 0)))
 
-(define prop1-1-diagram
+(define prop-01-01-diagram
   (draw
    ; given
    (curve A -- B)
@@ -27,7 +27,7 @@
    (curve A -- C)
    (curve B -- C)))
 
-(penwidth 2 prop1-1-diagram)
-;(send (pict->bitmap prop1-1-diagram) save-file "prop-01-01-diagram.png" 'png)
+(penwidth 2 prop-01-01-diagram)
+;(send (pict->bitmap prop-01-01-diagram) save-file "prop-01-01-diagram.png" 'png)
 
 

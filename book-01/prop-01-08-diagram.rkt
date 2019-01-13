@@ -14,7 +14,7 @@
 (def G (pt+ D (vec .2 -.02)))
 
 
-(define prop1-8-diagram
+(define prop-01-08-diagram
   (draw
    ; given
    (curve A -- B -- C -- cycle)
@@ -29,5 +29,5 @@
    (curve  E -- G -- F)
    (point-label "G" G (top))))
 
-(penwidth 2 prop1-8-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-8-diagram)) save-file "prop-01-08-diagram.png" 'png)
+(penwidth 2 prop-01-08-diagram)
+;(send (pict->bitmap (penwidth 2 prop-01-08-diagram)) save-file "prop-01-08-diagram.png" 'png)

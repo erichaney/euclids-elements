@@ -13,7 +13,7 @@
 (define F (med 1.4 B G))
 (define E (med 1.4 D L))
 
-(define prop1-2-diagram
+(define prop-01-02-diagram
   (draw
    ; given
    (point-dot-label "A" A (lft))
@@ -40,5 +40,5 @@
    (point-label "K" (pt+ D (vec@ (dist D G) (* 3/4 pi)))(ulft))
    
    ))
-(penwidth 2 prop1-2-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-2-diagram)) save-file "prop-01-02-diagram.png" 'png)
+(penwidth 2 prop-01-02-diagram)
+;(send (pict->bitmap (penwidth 2 prop-01-02-diagram)) save-file "prop-01-02-diagram.png" 'png)

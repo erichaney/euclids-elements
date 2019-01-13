@@ -13,7 +13,7 @@
 (define E (pt+ B v))
 (define F (pt+ C v))
 
-(define prop1-4-diagram
+(define prop-01-04-diagram
   (draw
    ; given
    (curve A -- B -- C -- cycle)
@@ -27,5 +27,5 @@
    ; 1
    (dashed (draw (curve E .. (med 0.5 (pt+ F (vec 0 -.05)) (pt+ E (vec 0 -.05))) .. F)))))
 
-(penwidth 2 prop1-4-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-4-diagram)) save-file "prop-01-04-diagram.png" 'png)
+(penwidth 2 prop-01-04-diagram)
+;(send (pict->bitmap (penwidth 2 prop-01-04-diagram)) save-file "prop-01-04-diagram.png" 'png)
