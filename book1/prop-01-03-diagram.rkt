@@ -30,4 +30,4 @@
 
 
 (penwidth 2 prop1-3-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-3-diagram)) save-file "prop1-3-diagram.png" 'png)
+;(send (pict->bitmap (penwidth 2 prop1-3-diagram)) save-file "prop-01-03-diagram.png" 'png)

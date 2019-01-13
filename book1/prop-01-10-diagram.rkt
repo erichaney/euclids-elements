@@ -30,4 +30,4 @@
    (point-label "G" G (top))))
 
 (penwidth 2 prop1-8-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-8-diagram)) save-file "prop1-8-diagram.png" 'png)
+;(send (pict->bitmap (penwidth 2 prop1-8-diagram)) save-file "prop-01-08-diagram.png" 'png)

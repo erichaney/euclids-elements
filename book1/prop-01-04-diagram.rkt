@@ -28,4 +28,4 @@
    (dashed (draw (curve E .. (med 0.5 (pt+ F (vec 0 -.05)) (pt+ E (vec 0 -.05))) .. F)))))
 
 (penwidth 2 prop1-4-diagram)
-;(send (pict->bitmap (penwidth 2 prop1-4-diagram)) save-file "prop1-4-diagram.png" 'png)
+;(send (pict->bitmap (penwidth 2 prop1-4-diagram)) save-file "prop-01-04-diagram.png" 'png)
