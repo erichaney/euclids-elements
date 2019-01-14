@@ -4,9 +4,9 @@
          "../metapict-euclid.rkt")
 (provide prop-01-07-diagram)
 
-(def A (pt -.5 -.3))
-(def B (pt+ A (vec .9 0)))
-(def C (pt .1 .4))
+(def A (pt -.7 -.5))
+(def B (pt+ A (vec 1.2 0)))
+(def C (pt .1 .5))
 (def D (pt+ C (vec .25 -.1)))
 
 (define prop-01-07-diagram
