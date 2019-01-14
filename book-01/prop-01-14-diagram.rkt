@@ -24,5 +24,5 @@
    (point-label "E" E (top))
    (subcurve (curve C .. B .. E) 1 2)))
 
-(penwidth 2 prop-01-14-diagram)
+;(penwidth 2 prop-01-14-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-14-diagram)) save-file "prop-01-14-diagram.png" 'png)

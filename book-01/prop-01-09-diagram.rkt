@@ -30,5 +30,5 @@
    ; 5
    (curve A -- F)))
    
-(penwidth 2 prop-01-09-diagram)
+;(penwidth 2 prop-01-09-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-09-diagram)) save-file "prop-01-09-diagram.png" 'png)

@@ -40,5 +40,5 @@
    (point-label "L" L (llft))
    (point-label "K" (pt+ D (vec@ (dist D G) (* 3/4 pi)))(ulft))))
 
-(penwidth 2 prop-01-02-diagram)
+;(penwidth 2 prop-01-02-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-02-diagram)) save-file "prop-01-02-diagram.png" 'png)

@@ -23,5 +23,5 @@
 
 
 
-(penwidth 2 prop-01-06-diagram)
+;(penwidth 2 prop-01-06-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-06-diagram)) save-file "prop-01-06-diagram.png" 'png)

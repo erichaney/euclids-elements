@@ -22,5 +22,5 @@
    (point-label "C" C (lft)) 
    (point-label "E" E (top))))
 
-(penwidth 2 prop-01-15-diagram)
+;(penwidth 2 prop-01-15-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-15-diagram)) save-file "prop-01-15-diagram.png" 'png)

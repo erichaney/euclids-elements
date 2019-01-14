@@ -30,5 +30,5 @@
    (point-label "E" E (urt))))
 
 
-(penwidth 2 prop-01-03-diagram)
+;(penwidth 2 prop-01-03-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-03-diagram)) save-file "prop-01-03-diagram.png" 'png)
