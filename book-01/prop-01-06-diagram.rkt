@@ -4,9 +4,9 @@
          "../metapict-euclid.rkt")
 (provide prop-01-06-diagram)
 
-(define A (pt 0 0.8))
-(define B (pt -0.4 -.2))
-(define C (pt 0.4 -.2))
+(define A (pt 0 0.6))
+(define B (pt -0.5 -.6))
+(define C (pt 0.5 -.6))
 (define D (med 0.25 A B))
 
 (define prop-01-06-diagram
