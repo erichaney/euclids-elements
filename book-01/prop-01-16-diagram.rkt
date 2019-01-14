@@ -3,10 +3,10 @@
 (require metapict
          "../metapict-euclid.rkt")
 
-(def A (pt -.1 .3))
-(def B (pt -.9 -.5))
-(def C (pt .1 -.5))
-(def D (pt .7 -.5))
+(def A (pt -.1 .5))
+(def B (pt -.9 -.3))
+(def C (pt .1 -.3))
+(def D (pt .7 -.3))
 (def E (med 0.5 A C))
 (def F (med 2 B E))
 (def G (med 1.5 A C))
