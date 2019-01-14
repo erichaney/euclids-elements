@@ -4,8 +4,8 @@
          "../metapict-euclid.rkt")
 (provide prop-01-01-diagram)
 
-(define A (pt -0.25 0))
-(define B (pt 0.25 0))
+(define A (pt -0.3 0))
+(define B (pt 0.3 0))
 (define C (car (intersect-cc A (dist A B) B (dist A B))))
 (define D (pt+ A (vec@ (dist A B) pi)))
 (define E (pt+ B (vec@ (dist A B) 0)))
