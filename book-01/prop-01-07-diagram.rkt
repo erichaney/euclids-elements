@@ -2,7 +2,7 @@
 
 (require metapict
          "../metapict-euclid.rkt")
-(provide (all-defined-out))
+(provide prop-01-07-diagram)
 
 (def A (pt -.5 -.3))
 (def B (pt+ A (vec .9 0)))

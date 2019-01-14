@@ -2,7 +2,7 @@
 
 (require metapict
          "../metapict-euclid.rkt")
-(provide (all-defined-out))
+(provide prop-01-09-diagram)
 
 (def A (pt 0 .7))
 (def B (pt -.5 -.6))
@@ -11,7 +11,7 @@
 (def E (med 0.6 A C))
 (def F (cadr (intersect-cc D (dist D E) E (dist D E))))
 
-(define prop1-9-diagram
+(define prop-01-09-diagram
   (draw
    ; given
    (curve C -- A -- B)
