@@ -7,7 +7,7 @@
 (def C (pt -.8 -.3))
 (def D (pt .8 -.3))
 (def B (med 0.5 C D))
-(def E (pt .8 -.15))
+(def E (pt .8 -.1))
 
 
 (define prop-01-14-diagram
@@ -19,7 +19,7 @@
    (point-label "B" B (bot))
    (point-label "D" D (bot))
    (point-label "C" C (bot))
-   ; 1 
+   ; 1
    (point-label "E" E (top))
    (subcurve (curve C .. B .. E) 1 2)))
 
