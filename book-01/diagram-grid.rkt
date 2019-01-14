@@ -75,6 +75,6 @@
           (apply beside (drop diagrams 12)))))
 
 diagram-grid
-;(send (pict->bitmap diagram-grid) save-file "diagram-grid3.png" 'png)
+;(send (pict->bitmap diagram-grid) save-file "diagram-grid.png" 'png)
 
-;(bitmap "diagram-grid3.png")
+;(bitmap "diagram-grid.png")
