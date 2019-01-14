@@ -7,8 +7,8 @@
 (define A (pt 0 0.8))
 (define B (pt -0.4 -.2))
 (define C (pt 0.4 -.2))
-(define D (med 1.8 A B))
-(define E (med 1.8 A C))
+(define D (med 1.6 A B))
+(define E (med 1.6 A C))
 (define F (med 0.6 B D))
 (define G (med 0.6 C E))
 
