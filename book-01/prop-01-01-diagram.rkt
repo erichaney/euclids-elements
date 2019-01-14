@@ -2,7 +2,7 @@
 
 (require metapict
          "../metapict-euclid.rkt")
-
+(provide (all-defined-out))
 
 (define A (pt -0.25 0))
 (define B (pt 0.25 0))

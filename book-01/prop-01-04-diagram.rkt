@@ -2,6 +2,7 @@
 
 (require metapict
          "../metapict-euclid.rkt")
+(provide (all-defined-out))
 
 (define A (pt -.3 .2))
 (define B (pt+ A (vec -.5 -.6)))

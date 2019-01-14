@@ -2,6 +2,8 @@
 
 (require metapict
          "../metapict-euclid.rkt")
+(provide (all-defined-out))
+
 (def base 1.2)
 (def A (pt -.9 -.5))
 (def B (pt .9 -.5))
