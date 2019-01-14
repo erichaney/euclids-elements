@@ -4,9 +4,9 @@
          "../metapict-euclid.rkt")
 (provide prop-01-02-diagram)
 
-(define A (pt 0 0))
-(define B (pt .2 .2))
-(define C (pt .1 .7))
+(define A (pt 0 -.1))
+(define B (pt .2 .1))
+(define C (pt .1 .6))
 (define AB (dist A B))
 (define D (car (intersect-cc A AB B AB)))
 (define G (cadr (intersect-lc D B B (dist B C))))
@@ -38,8 +38,7 @@
    ; 5
    (circle D G)
    (point-label "L" L (llft))
-   (point-label "K" (pt+ D (vec@ (dist D G) (* 3/4 pi)))(ulft))
-   
-   ))
+   (point-label "K" (pt+ D (vec@ (dist D G) (* 3/4 pi)))(ulft))))
+
 (penwidth 2 prop-01-02-diagram)
 ;(send (pict->bitmap (penwidth 2 prop-01-02-diagram)) save-file "prop-01-02-diagram.png" 'png)
