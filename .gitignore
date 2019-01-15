@@ -2,3 +2,4 @@
 *.bak
 *.dep
 *.zo
+.DS_Store
