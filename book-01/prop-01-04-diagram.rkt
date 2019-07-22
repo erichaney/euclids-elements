@@ -14,9 +14,8 @@
 (define E (pt+ B v))
 (define F (pt+ C v))
 
-(define prop-01-04-diagram
+(define diagram-0
   (draw
-   ; given
    (curve A -- B -- C -- cycle)
    (curve D -- E -- F -- cycle)
    (point-label "A" A (top))
@@ -24,9 +23,17 @@
    (point-label "B" B (bot))
    (point-label "E" E (llft))
    (point-label "C" C (lrt))
-   (point-label "F" F (lrt))
-   ; 1
+   (point-label "F" F (lrt))))
+
+(define diagram-1
+  (draw
+   diagram-0
    (dashed (draw (curve E .. (med 0.5 (pt+ F (vec 0 -.05)) (pt+ E (vec 0 -.05))) .. F)))))
 
-;(penwidth 2 prop-01-04-diagram)
-;(send (pict->bitmap (penwidth 2 prop-01-04-diagram)) save-file "prop-01-04-diagram.png" 'png)
+(define (prop-01-04-diagram [n 1])
+  (if (= n 0)
+      diagram-0
+      diagram-1))
+
+(penwidth 2 (prop-01-04-diagram))
+;(send (pict->bitmap (penwidth 2 (prop-01-04-diagram))) save-file "prop-01-04-diagram.png" 'png)
